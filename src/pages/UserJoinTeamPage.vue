@@ -9,9 +9,7 @@
   />
   <team-card-list :team-list="teamList"/>
   <van-empty v-if="!teamList||teamList.length<1" description="数据为空" />
-  <div id="teampage">
-    <van-button type="primary" @click="doJoinTeam" icon-position="right">创建队伍</van-button>
-  </div>
+
 
 </template>
 
@@ -34,7 +32,7 @@ const doJoinTeam = () => {
   console.log("doJoinTeam")
 }
 const listTeam = async (val ='') => {
-  const res = await myaxios.get('/team/list',{
+  const res = await myaxios.get('/team/list/my/join',{
     params:{
       searchText:val
     }

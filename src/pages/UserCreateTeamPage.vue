@@ -9,22 +9,20 @@
   />
   <team-card-list :team-list="teamList"/>
   <van-empty v-if="!teamList||teamList.length<1" description="数据为空" />
+
   <div id="teampage">
     <van-button type="primary" @click="doJoinTeam" icon-position="right">创建队伍</van-button>
   </div>
-
 </template>
 
 
 <script setup lang="ts">
 import {useRouter} from "vue-router";
 import TeamCardList from "../components/TeamCardList.vue";
-
 import {onMounted, ref} from "vue";
 import myaxios from "../plugins/my-axios.ts";
-import {TeamType} from "../models/team";
 import {showFailToast, showSuccessToast} from "vant";
-import { showToast } from 'vant';
+
 const teamList = ref([]);
 const router = useRouter();
 const searchText = ref('');
@@ -34,7 +32,7 @@ const doJoinTeam = () => {
   console.log("doJoinTeam")
 }
 const listTeam = async (val ='') => {
-  const res = await myaxios.get('/team/list',{
+  const res = await myaxios.get('/team/list/my',{
     params:{
       searchText:val
     }

@@ -15,8 +15,6 @@
   </div>
 
 
-
-
   <van-tabbar @change="onChange" route>
     <van-tabbar-item  to="/" icon="home-o" name="index">主页</van-tabbar-item>
     <van-tabbar-item to="/team" icon="search" name="team">队伍</van-tabbar-item>
