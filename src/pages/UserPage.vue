@@ -35,6 +35,7 @@ const user = ref();
 const router = useRouter();
 onMounted(async ()=> {
       user.value = await getCurrentUser();
+
     })
 
 const toEdit = (editKey: string,editName: string,currentValue: string) => {

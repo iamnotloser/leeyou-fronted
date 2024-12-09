@@ -1,10 +1,10 @@
 import {createApp} from 'vue'
 import App from './App.vue'
 import 'vant/lib/index.css';
-import {createRouter, createWebHashHistory} from "vue-router";
+import {createRouter, createWebHashHistory, createWebHistory} from "vue-router";
 import routes from "./config/route.ts";
 import Vant from 'vant';
-
+import '../global.css'
 
 // createApp(App).mount('#app');
 const app = createApp(App);
@@ -12,7 +12,7 @@ const app = createApp(App);
 
 
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes,
 })
 app.use(Vant)

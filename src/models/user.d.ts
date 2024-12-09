@@ -19,5 +19,5 @@ export type UserType = {
     role?: number;
     isDelete?: number;
     phone: string;
-    tags:string[];
+    tags:string;
 };
