@@ -1,9 +1,9 @@
-
-
 import axios from "axios";
 
+const isDev = process.env.NODE_ENV === 'development';
+
 const myaxios = axios.create({
-    baseURL: 'http://localhost:8080/api',
+    baseURL: isDev ? 'http://localhost:8080/api' : 'https://119.91.48.253:8080/api',
     withCredentials:true
 
 });
